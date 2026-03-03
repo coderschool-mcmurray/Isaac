@@ -48,7 +48,7 @@ while not any(player.score >= 100 for player in allPlayers):
         if (allPlayers[currentPlayer - 1].playerType == "human"):
             print(allPlayers[currentPlayer - 1].name + " rolled a " + str(roll) +".")
         else:
-            print("Player " + str(currentPlayer) + " rolled a " + str(roll) +".")
+            print(f"Player {currentPlayer} rolled a {roll}.")
         if roll == 1:
             print("You rolled a 1! You get no points for this round!")
             print("Now onto the next player")
