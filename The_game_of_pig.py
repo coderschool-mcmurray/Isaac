@@ -44,7 +44,7 @@ while not any(player.score >= 100 for player in allPlayers):
         choice = input("Would you like to roll or bank? ")
 
     if choice in ("roll", "r"):
-        print()
+        print(f"\n") #use escape sequences to introduce newline
         roll = roll_da_dice()
         if (allPlayers[currentPlayer - 1].playerType == "human"):
             print(f"{allPlayers[currentPlayer - 1].name} rolled a {roll}.")
@@ -56,12 +56,12 @@ while not any(player.score >= 100 for player in allPlayers):
             print("Now onto the next player")
             allPlayers[currentPlayer - 1].turntotal = 0
             allPlayers[currentPlayer - 1].turns += 1
-            print()
+            print(f"\n")
             if playerCount == currentPlayer:
                 currentPlayer = 1
             elif playerCount != 1:
                 currentPlayer += 1
-            print()
+            print(f"\n")
             print("Now onto the next player")
             print("Player " + str(currentPlayer) + "'s turn")
             print("Turn " + str(allPlayers[currentPlayer - 1].turns))
@@ -79,14 +79,13 @@ while not any(player.score >= 100 for player in allPlayers):
         if allPlayers[currentPlayer - 1].score >= 100:
             break
         
-        print()
+        print(f"\n")
         if playerCount == currentPlayer:
             currentPlayer = 1
         else:
             currentPlayer += 1
         
-        print()
-        print()
+        print(f"\n\n")
         print("Now onto the next player")
         print("Player " + str(currentPlayer) + "'s turn")
         print("Turn " + str(allPlayers[currentPlayer - 1].turns))
