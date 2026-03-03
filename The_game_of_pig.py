@@ -21,12 +21,13 @@ playerCount = int(input("How many players are playing? "))
 if playerCount != 1:
     currentPlayer = 1
     for i in range(playerCount):
-        playerT = input("Are you a human or robot?")
+        playerT = input("Are you a human or robot? ")
+        playerT = playerT.lower()
         allPlayers.append(i + 1)
         allPlayers[i] = Enity()
         if playerT == "human":
             allPlayers[i].playerType = "human"
-            allPlayers[i].name = input("What is your name?")
+            allPlayers[i].name = input("What is your name? ")
 else:
     allPlayers.append(1)
     allPlayers[0] = Enity()
@@ -46,8 +47,9 @@ while not any(player.score >= 100 for player in allPlayers):
         print()
         roll = roll_da_dice()
         if (allPlayers[currentPlayer - 1].playerType == "human"):
-            print(allPlayers[currentPlayer - 1].name + " rolled a " + str(roll) +".")
+            print(f"{allPlayers[currentPlayer - 1].name} rolled a {roll}.")
         else:
+            #f-strings allow to incorproate variables in strings
             print(f"Player {currentPlayer} rolled a {roll}.")
         if roll == 1:
             print("You rolled a 1! You get no points for this round!")
